@@ -1,0 +1,18 @@
+
+.home{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assests/IMG/faculty.jpg");
+    height:100vh;
+    background-size: cover;
+    color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+button{
+    outline: none;
+}
+.bg{
+    color: #000
+}
