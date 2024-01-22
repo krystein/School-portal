@@ -9,8 +9,8 @@ class Student extends Database{
     
     public function createStudent($data) {
 
-        $query = "INSERT INTO students (name, email, date_of_birth, phone_number, password, marital_status, sex, state_of_origin, address, level, options, father_name, mother_name)
-                  VALUES (:name, :email, :date_of_birth, :phone_number, :password, :marital_status, :sex, :state_of_origin, :address, :level, :options, :father_name, :mother_name)";
+        $query = "INSERT INTO students (name, email, date_of_birth, phone_number, password, marital_status, sex, state_of_origin, address, level, matriculation_number, father_name, mother_name, image)
+                  VALUES (:name, :email, :date_of_birth, :phone_number, :password, :marital_status, :sex, :state_of_origin, :address, :level, :matriculation_number, :father_name, :mother_name, :image)";
 
         $stmt = $this->connect()->prepare($query);
         $stmt->execute($data);

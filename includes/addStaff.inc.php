@@ -2,7 +2,7 @@
 require_once("class-autoload.inc.php");
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+
     // Validate form data (perform server-side validation)
     $errors = validateFormData($_POST);
 
@@ -18,22 +18,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'state_of_origin' => $_POST['state_of_origin'],
             'address' => $_POST['address'],
             'position' => $_POST['position'],
-            'password' => $_POST['password'],
-            // Add more fields as needed
+            'password' => md5($_POST['password']),
         );
+        // Handle file upload
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "../image/" . $filename;
 
-        $staffController = new StaffController(new Staff());
-        $result = $staffController->addStaff($formData);
+        if (move_uploaded_file($tempname, $folder)) {
+            // Image uploaded successfully
+            $formData['image'] = $filename;
 
-        header("location: ../");
+            $staffController = new StaffController(new Staff());
+            $result = $staffController->addStaff($formData);
+
+            // Display result or redirect to another page
+            header('location: ../index.php');
+        } else {
+            // Failed to upload image
+            echo "<h3>Failed to upload image!</h3>";
+            header("location: ../index.php?error=invalid!");
+        }
     } else {
-        header("location: ../index.php?error=invalid!");
+        // Display validation errors
+        echo implode('<br>', $errors);
     }
-    
 }
 
+
 // Function to perform server-side validation
-function validateFormData($data) {
+function validateFormData($data)
+{
     $errors = array();
 
     if (empty($data['name'])) {
@@ -41,4 +56,3 @@ function validateFormData($data) {
     }
     return $errors;
 }
-?>

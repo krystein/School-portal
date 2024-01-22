@@ -13,11 +13,15 @@
 
 <body>
     <div class="container p-3">
-    <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center">
             <h2>Staff Registration Form</h2>
             <a href="index.php"><button class="btn btn-primary">Home</button></a>
         </div>
-        <form action="includes/addStaff.inc.php" method="post">
+        <form action="includes/addStaff.inc.php" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="uploadfile">Passport:</label>
+                <input class="form-control" type="file" name="uploadfile" value="Image" />
+            </div>
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" name="name" class="form-control" required>

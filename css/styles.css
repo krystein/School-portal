@@ -14,5 +14,5 @@ button{
     outline: none;
 }
 .bg{
-    color: #000
+    background-color: greenyellow !important;
 }

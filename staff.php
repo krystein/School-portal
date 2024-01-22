@@ -31,11 +31,11 @@ $allStaffs = $staffs->showStaff();
                         <table class="table text-nowrap">
                             <thead>
                                 <tr>
-                                    <th class="border-top-0">#</th>
-                                    <th class="border-top-0">First Name</th>
-                                    <th class="border-top-0">Last Name</th>
-                                    <th class="border-top-0">Username</th>
-                                    <th class="border-top-0">Role</th>
+                                    <th class="border-top-0">Fullname</th>
+                                    <th class="border-top-0">Email</th>
+                                    <th class="border-top-0">Phone Number</th>
+                                    <th class="border-top-0">Sex</th>
+                                    <th class="border-top-0">Position</th>
                                 </tr>
                             </thead>
                             <tbody>

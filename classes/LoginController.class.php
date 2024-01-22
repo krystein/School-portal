@@ -23,5 +23,22 @@ class LoginController extends User{
             return false; // Authentication failed
         }
     }
+    public function authenticateStaff($email, $password) {
+        // Authenticate user based on provided credentials
+        $staffs = $this->model->getStaffs($email);
+
+        $staffData = $staffs->fetch(PDO::FETCH_ASSOC);
+
+        if ($staffData && md5($password)== $staffData['password']) {
+            // Start a session and store user details
+            session_start();
+            $_SESSION['name'] = $staffData['name'];
+            $_SESSION['email'] = $staffData['email'];
+
+            return true; // Authentication successful
+        } else {
+            return false; // Authentication failed
+        }
+    }
 }
 ?>

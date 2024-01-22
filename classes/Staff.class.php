@@ -10,8 +10,8 @@ class Staff extends Database {
 
 
     public function createStaff($data) {
-        $query = "INSERT INTO staff (name, email, date_of_birth, phone_number, password, marital_status, sex, state_of_origin, address, position)
-                  VALUES (:name, :email, :date_of_birth, :phone_number, :password, :marital_status, :sex, :state_of_origin, :address, :position)";
+        $query = "INSERT INTO staff (name, email, date_of_birth, phone_number, password, marital_status, sex, state_of_origin, address, position, image)
+                  VALUES (:name, :email, :date_of_birth, :phone_number, :password, :marital_status, :sex, :state_of_origin, :address, :position, :image)";
 
         $stmt = $this->connect()->prepare($query);
         $stmt->execute($data);

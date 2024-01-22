@@ -1,11 +1,16 @@
 <?php
-include("includes/class-autoload.inc.php");
+require("includes/class-autoload.inc.php");
 session_start();
+
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit();
+}
 
 $userView = new UserView();
 
 $email =  $_SESSION['email'];
-$user = $userView->showUser($email);
+$user = $userView -> showStaff($email);
 
 ?>
 <!DOCTYPE html>
@@ -53,19 +58,30 @@ $user = $userView->showUser($email);
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.php" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="staffprofile.php" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="result.php" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="IDcard.php" aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">IDcard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="staffResult.php" aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Result</span>
                             </a>
                         </li>
                     </ul>
-
+                    <div class="d-flex justify-content-center">
+                        <form action="./includes/logout.inc.php" method="GET">
+                            <input type="hidden" name="action" value="logout">
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </form>
+                    </div>
                 </nav>
             </div>
         </aside>
@@ -80,7 +96,7 @@ $user = $userView->showUser($email);
                                 <div class="user-bg"> <img width="100%" alt="user" src="assests/IMG/logo.png">
                                     <div class="overlay-box">
                                         <div class="user-content">
-                                            <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg" class="thumb-lg img-circle" alt="img"></a>
+                                            <a href="javascript:void(0)"><img src="./image/<?php echo $user['image']; ?>" class="thumb-lg img-circle" alt="img"></a>
                                             <h4 class="text-white mt-2"><?php echo $user['name']; ?></h4>
                                             <h5 class="text-white mt-2"><?php echo $user['email']; ?></h5>
                                         </div>
@@ -95,44 +111,49 @@ $user = $userView->showUser($email);
                                         <div class="form-group mb-4">
                                             <label class="col-md-12 p-0">Full Name</label>
                                             <div class="col-md-12 border-bottom p-0">
-                                            <h5 class="text-uppercase"><?php echo $user['name']; ?></h5>
+                                                <h5 class="text-uppercase"><?php echo $user['name']; ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
-                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                            <label class="col-md-12 p-0">Email</label>
                                             <div class="col-md-12 border-bottom p-0">
-                                            <h5 class=""><?php echo $user['email']; ?></h5>
+                                                <h5 class=""><?php echo $user['email']; ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
-                                            <label class="col-md-12 p-0">Password</label>
+                                            <label class="col-md-12 p-0">sex</label>
                                             <div class="col-md-12 border-bottom p-0">
-                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                <h5><?php echo $user['sex'] ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
                                             <label class="col-md-12 p-0">Phone No</label>
                                             <div class="col-md-12 border-bottom p-0">
-                                                <input type="text" placeholder="123 456 7890" class="form-control p-0 border-0">
+                                                <h5><?php echo $user['phone_number'] ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
-                                            <label class="col-md-12 p-0">Message</label>
+                                            <label class="col-md-12 p-0">Date of Birth</label>
                                             <div class="col-md-12 border-bottom p-0">
-                                                <textarea rows="5" class="form-control p-0 border-0"></textarea>
+                                                <h5><?php echo $user['date_of_birth'] ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
-                                            <label class="col-sm-12">Select Country</label>
-
-                                            <div class="col-sm-12 border-bottom">
-                                                <select class="form-select shadow-none p-0 border-0 form-control-line">
-                                                    <option>London</option>
-                                                    <option>India</option>
-                                                    <option>Usa</option>
-                                                    <option>Canada</option>
-                                                    <option>Thailand</option>
-                                                </select>
+                                            <label class="col-md-12 p-0">state of origin</label>
+                                            <div class="col-md-12 border-bottom p-0">
+                                                <h5><?php echo $user['state_of_origin'] ?></h5>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label class="col-md-12 p-0">Address</label>
+                                            <div class="col-md-12 border-bottom p-0">
+                                                <h5><?php echo $user['address'] ?></h5>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label class="col-md-12 p-0">Position</label>
+                                            <div class="col-md-12 border-bottom p-0">
+                                                <h5><?php echo $user['position'] ?></h5>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
@@ -146,7 +167,7 @@ $user = $userView->showUser($email);
                         </div>
                     </div>
                 <?php
-                }else{
+                } else {
                     echo "User not Found";
                 }
                 ?>

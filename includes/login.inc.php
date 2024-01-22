@@ -10,11 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $loginController = new LoginController($userModel);
 
     if ($loginController->authenticateUser($username, $password)) {
-        header('Location: ../profile.php'); // Redirect to the dashboard after successful login
+        header('Location: ../studentprofile.php'); // Redirect to the dashboard after successful login
         exit();
     } else {
-        echo $username;
-        echo $password;
+        header("Location: ../login.php?error=invalid email or password");
+    }
+
+    if ($loginController->authenticateStaff($username, $password)) {
+        header('Location: ../Staffprofile.php'); // Redirect to the dashboard after successful login
+        exit();
+    } else {
+        header("Location: ../login.php?error=invalid email or password");
     }
 }
 

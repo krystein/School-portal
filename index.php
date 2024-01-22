@@ -15,14 +15,17 @@
 <body>
     <div class="home">
         <div class="container">
-        <div class="mt-3 d-flex justify-content-between">
-            <a href="staff.php"><button class="btn btn-success">Staff List</button></a>
-            <a href="student.php"><button class="btn btn-success">Student List</button></a>
-            </div>
-            <h2 class="text-uppercase">Welcome</h2>
-            <div>
-                <a href="student_form.php"><button class="btn btn-primary">Student Registration</button></a>
-                <a href="staff_form.php"><button class="btn btn-primary">Staff Registration</button></a>
+            <div class="mt-3 d-flex justify-content-between">
+                <div>
+                    <a href="student_form.php"><button class="btn btn-success">Student Registration</button></a>
+                    <a href="staff_form.php"><button class="btn btn-success">Staff Registration</button></a>
+                    <a href="login.php"><button class="btn btn-success">Login</button></a>
+                </div>
+                <h2 class="text-uppercase">Welcome</h2>
+                <div>
+                    <a href="staff.php"><button class="btn btn-primary">Staff List</button></a>
+                    <a href="student.php"><button class="btn btn-primary">Student List</button></a>
+                </div>
             </div>
         </div>
     </div>

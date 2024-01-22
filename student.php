@@ -33,7 +33,7 @@ $allStudents = $students->showStudent();
                                 <tr>
                                     <th class="border-top-0">Fullname</th>
                                     <th class="border-top-0">Email</th>
-                                    <th class="border-top-0">Date of birth</th>
+                                    <th class="border-top-0">Mat-No</th>
                                     <th class="border-top-0">Telephone</th>
                                     <th class="border-top-0">sex</th>
                                     <th class="border-top-0">Level</th>
@@ -46,7 +46,7 @@ $allStudents = $students->showStudent();
                                     <tr>
                                         <td> <?php echo $student['name']; ?></td>
                                         <td> <?php echo $student['email']; ?></td>
-                                        <td><?php echo $student['date_of_birth']; ?></td>
+                                        <td><?php echo $student['matriculation_number']; ?></td>
                                         <td><?php echo $student['phone_number']; ?></td>
                                         <td><?php echo $student['sex']; ?></td>
                                         <td><?php echo $student['level']; ?></td>

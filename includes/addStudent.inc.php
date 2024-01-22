@@ -20,17 +20,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'state_of_origin' => $_POST['state_of_origin'],
             'address' => $_POST['address'],
             'level' => $_POST['level'],
-            'options' => $_POST['options'],
+            'matriculation_number' => $_POST['matriculation_number'],
             'father_name' => $_POST['father_name'],
-            'mother_name' => $_POST['mother_name'],
+            'mother_name' => $_POST['mother_name']
         );
 
-        $studentController = new StudentController(new Student());
-        $result = $studentController->addStudent($formData);
+        // Handle file upload
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "../image/" . $filename;
 
-        // Display result or redirect to another page
-        echo $result;
+        if (move_uploaded_file($tempname, $folder)) {
+            // Image uploaded successfully
+            $formData['image'] = $filename;
 
+            $studentController = new StudentController(new Student());
+            $result = $studentController->addStudent($formData);
+
+            // Display result or redirect to another page
+            header('location: ../index.php');
+        } else {
+            // Failed to upload image
+            echo "<h3>Failed to upload image!</h3>";
+        }
     } else {
         // Display validation errors
         echo implode('<br>', $errors);
