@@ -23,6 +23,7 @@ $user = $userView->showStaff($email);
     <meta name="robots" content="noindex,nofollow">
     <title>Student portal</title>
     <link href="css/style.min.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -103,6 +104,7 @@ $user = $userView->showStaff($email);
                                         <option selected disabled value="">Select Level</option>
                                         <option>year1</option>
                                         <option>year2</option>
+                                        <option>year3</option>
                                     </select>
                                 </div>
                             </div>
@@ -114,13 +116,14 @@ $user = $userView->showStaff($email);
             </div>
         </div>
     </div>
+    <script src="js/style.js"></script>
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app-style-switcher.js"></script>
     <script src="js/waves.js"></script>
     <script src="js/sidebarmenu.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/style.js"></script>
+    
 </body>
 
 </html>
