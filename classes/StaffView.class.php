@@ -15,4 +15,3 @@ class StaffView extends Staff
     }
 }
 
-?>

@@ -7,7 +7,7 @@ if (isset($_GET['student_id'])) {
     $studentId = $_GET['student_id'];
 
     // Create a StudentController
-    $studentController = new StudentController(new Student(''));
+    $studentController = new StudentController(new Student());
 
     // Check if the student exists before attempting deletion
     if ($studentController->studentExists($studentId)) {

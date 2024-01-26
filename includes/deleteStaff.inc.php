@@ -6,7 +6,7 @@ if (isset($_GET['staff_id'])) {
     $staffId = $_GET['staff_id'];
 
     // Create a StaffController
-    $staffController = new StaffController(new Staff($conn));
+    $staffController = new StaffController(new Staff());
 
     // Check if the staff member exists before attempting deletion
     if ($staffController->staffExists($staffId)) {

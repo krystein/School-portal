@@ -35,7 +35,7 @@ function updateCGPA() {
     resultOutput.innerHTML = 'Your CGPA is: ' + cgpa;
 }
 const changeSwitcher = () => {
-  if (select.value == "100L") {
+  if (select.value == "year1") {
     container.innerHTML = `
       <table id="courseTable" class="container">
       <thead>
@@ -49,51 +49,51 @@ const changeSwitcher = () => {
           <tr>
               <td>GES 100.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" name="ges100" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>GES 102.1</td>
               <td>2</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="ges102" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>CHM 130.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput"name="chm130" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>PHY 101.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="phy101" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>PHY 102.1</td>
               <td>1</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="phy102" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>MTH 110.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="mth110" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>MTH 120.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="mth120" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
           <tr>
               <td>ENG 101.1</td>
               <td>3</td>
-              <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+              <td><input type="text" class="gradeInput" name="eng101" placeholder="Grade" oninput="updateCGPA()"></td>
           </tr>
       </tbody>
   </table>
 
   <h4 id="result" class="mt-2"></h4>
           `;
-  } else if (select.value == "200L") {
+  } else if (select.value == "year2") {
     container.innerHTML = `
-    <table id="courseTable">
+    <table  id="courseTable" class="container">
     <thead>
         <tr>
             <th>Course Name</th>
@@ -105,37 +105,37 @@ const changeSwitcher = () => {
         <tr>
             <td>ENG 213.1</td>
             <td>2</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng213" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>ENG 201.1</td>
             <td>3</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng201" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>ENG 202.1</td>
             <td>2</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng202" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>ENG 203.1</td>
             <td>3</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng203" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>ENG 204.1</td>
             <td>2</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng204" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>ENG 210.1</td>
             <td>3</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="eng210" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
         <tr>
             <td>PHY 216.1</td>
             <td>3</td>
-            <td><input type="text" class="gradeInput" placeholder="Grade" oninput="updateCGPA()"></td>
+            <td><input type="text" class="gradeInput" name="phy216" placeholder="Grade" oninput="updateCGPA()"></td>
         </tr>
     </tbody>
 </table>

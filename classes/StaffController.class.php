@@ -20,4 +20,3 @@ class StaffController extends Staff {
 }
 
 
-?>

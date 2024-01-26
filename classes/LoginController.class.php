@@ -41,4 +41,4 @@ class LoginController extends User{
         }
     }
 }
-?>
+

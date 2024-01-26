@@ -87,22 +87,22 @@ $user = $userView->showStaff($email);
         </aside>
         <div class="page-wrapper">
             <div class="container-fluid">
-                <form>
+                <form action="includes/addResult.inc.php" method="post">
                     <div id="calculator">
                         <h2>RESULT-SHEET</h2>
                         <hr>
                         <div class="form-group row">
                             <div class="col">
                                 <label class="col col-form-label">Matriculation Number</label>
-                                <input type="text" class="input form-control" />
+                                <input type="text" name="matriculation_number" class="input form-control" />
                             </div>
                             <div class="col">
                                 <label class="col col-form-label">Level</label>
                                 <div>
-                                    <select id="level" name="level" class="input form-control" required onchange="changeSwitcher()">
+                                    <select id="level" name="ResultLevel" class="input form-control" required onchange="changeSwitcher()">
                                         <option selected disabled value="">Select Level</option>
-                                        <option>100L</option>
-                                        <option>200L</option>
+                                        <option>year1</option>
+                                        <option>year2</option>
                                     </select>
                                 </div>
                             </div>
