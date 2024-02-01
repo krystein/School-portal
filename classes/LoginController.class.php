@@ -8,14 +8,14 @@ class LoginController extends User{
 
     public function authenticateUser($email, $password) {
         // Authenticate user based on provided credentials
-        $user = $this->model->getUser($email);
+        $user = $this->model->getStudent($email);
 
         $userData = $user->fetch(PDO::FETCH_ASSOC);
 
         if ($userData && md5($password)== $userData['password']) {
             // Start a session and store user details
             session_start();
-            $_SESSION['name'] = $userData['name'];
+            $_SESSION['matriculation_number'] = $userData['matriculation_number'];
             $_SESSION['email'] = $userData['email'];
 
             return true; // Authentication successful

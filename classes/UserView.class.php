@@ -1,28 +1,27 @@
 <?php
 class UserView extends User
 {
-    private $user;
-    private $staffs;
+    private $student;
+    private $staff;
 
-    public function showUser($email)
+    public function showStudent($email)
     {
-        $result = $this->getUser($email); // Assuming you have a getUser() method in your User class
+        $result = $this->getStudent($email);
 
-        // Fetch the user details for the specified user ID
-        $this->user = $result->fetch(PDO::FETCH_ASSOC);
+        $this->student = $result->fetch(PDO::FETCH_ASSOC);
 
-        return $this->user;
+        return $this->student;
 
     }
     public function showStaff($email)
     {
-        $result = $this->getStaffs($email); // Assuming you have a getUser() method in your User class
+        $result = $this->getStaffs($email);
 
-        // Fetch the user details for the specified user ID
-        $this->staffs = $result->fetch(PDO::FETCH_ASSOC);
+        $this->staff = $result->fetch(PDO::FETCH_ASSOC);
 
-        return $this->staffs;
+        return $this->staff;
 
     }
+    
 }
-?>
+

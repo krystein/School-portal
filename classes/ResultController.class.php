@@ -1,6 +1,6 @@
 <?php
 
-class ResultController extends Result {
+class ResultController extends User {
     protected $model;
 
     public function __construct($model)

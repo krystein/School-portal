@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Image uploaded successfully
             $formData['image'] = $filename;
 
-            $studentController = new StudentController(new Student());
+            $studentController = new StudentController(new User());
             $result = $studentController->addStudent($formData);
 
             // Display result or redirect to another page
@@ -62,4 +62,3 @@ function validateFormData($data) {
 
     return $errors;
 }
-?>

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'eng101' => $_POST['eng101'],
         );
          
-            $resultController = new ResultController(new Result());
+            $resultController = new ResultController(new User());
             $result = $resultController->addResult1($formData);
 
                 header("Location: ../staffResult.php?upload-successful");
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'phy216' => $_POST['phy216'],
         );
          
-            $resultController = new ResultController(new Result());
+            $resultController = new ResultController(new User());
             $result = $resultController->addResult2($formData);
 
                 header("Location: ../staffResult.php?upload-successful");

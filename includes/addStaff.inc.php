@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Image uploaded successfully
             $formData['image'] = $filename;
 
-            $staffController = new StaffController(new Staff());
+            $staffController = new StaffController(new User());
             $result = $staffController->addStaff($formData);
 
             // Display result or redirect to another page

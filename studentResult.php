@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 $userView = new UserView();
 
 $email =  $_SESSION['email'];
-$user = $userView->showStaff($email);
+$user = $userView->showStudent($email);
 
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $user = $userView->showStaff($email);
     <meta name="robots" content="noindex,nofollow">
     <title>Student portal</title>
     <link href="css/style.min.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -59,7 +59,7 @@ $user = $userView->showStaff($email);
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="staffprofile.php" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="studentprofile.php" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
@@ -88,41 +88,35 @@ $user = $userView->showStaff($email);
         </aside>
         <div class="page-wrapper">
             <div class="container-fluid">
-                <form action="includes/addResult.inc.php" method="post">
+                <form>
                     <div id="calculator">
                         <h2>RESULT-SHEET</h2>
                         <hr>
                         <div class="form-group row">
                             <div class="col">
-                                <label class="col col-form-label" for="mat">Matriculation Number</label>
-                                <input type="text" name="matriculation_number" class="input form-control" id="mat"/>
-                            </div>
-                            <div class="col">
-                                <label class="col col-form-label" for="level">Level</label>
                                 <div>
-                                    <select id="level" name="ResultLevel" class="input form-control" required onchange="changeSwitcher()">
+                                    <select id="result" onchange="changeSwitcher()" class="form-control-lg">
                                         <option selected disabled value="">Select Level</option>
                                         <option>year1</option>
                                         <option>year2</option>
                                     </select>
                                 </div>
                             </div>
-                            <div id="switcher"></div>
+                            <div id="switch"></div>
                         </div>
-                        <button class="btn btn-success">Upload</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script src="js/style.js"></script>
+    <script src="js/Result.js"></script>
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app-style-switcher.js"></script>
     <script src="js/waves.js"></script>
     <script src="js/sidebarmenu.js"></script>
     <script src="js/custom.js"></script>
-    
+
 </body>
 
 </html>

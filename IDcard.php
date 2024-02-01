@@ -9,7 +9,7 @@ if (!isset($_SESSION['email'])) {
 $userView = new UserView();
 
 $email =  $_SESSION['email'];
-$user = $userView->showUser($email);
+$user = $userView->showStudent($email);
 $staff = $userView->showStaff($email);
 
 if ($user) {

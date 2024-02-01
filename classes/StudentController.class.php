@@ -1,5 +1,5 @@
 <?php
-class StudentController extends Student {
+class StudentController extends User {
     private $model;
 
     public function __construct($model) {

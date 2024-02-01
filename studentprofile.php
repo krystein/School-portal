@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 $userView = new UserView();
 
 $email =  $_SESSION['email'];
-$user = $userView->showUser($email);
+$user = $userView->showStudent($email);
 
 ?>
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ $user = $userView->showUser($email);
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="resultlist.php" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="studentResult.php" aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Result</span>
                             </a>

@@ -1,6 +1,6 @@
 <?php
 
-class StaffController extends Staff {
+class StaffController extends User {
     private $model;
 
     public function __construct($model) {
